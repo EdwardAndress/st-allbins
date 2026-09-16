@@ -173,7 +173,10 @@
     line-height: 1.4;
   }
   .hint-link:hover { filter: brightness(0.97); }
-  .hint-link-title { display: block; font-weight: 700; margin-bottom: 2px; }
+  .hint-link:hover .hint-link-cta { text-decoration-thickness: 2px; }
+  .hint-link-title { display: block; font-weight: 600; margin-bottom: 2px; }
+  .hint-link-cta { text-decoration: underline; text-underline-offset: 3px; font-weight: 700; }
+  .hint-link-body { display: block; opacity: 0.85; }
   .hint-link-body em { font-style: normal; font-weight: 600; }
   .modal .actions {
     display: flex;
@@ -227,8 +230,8 @@
         <label for="w2">Week 2</label>
       </div>
       <a class="hint-link" href="https://www.stalbans.gov.uk/rubbish-collections#calendar" target="_blank" rel="noopener">
-        <span class="hint-link-title">Not sure which week? →</span>
-        <span class="hint-link-body">Open the council page and scroll to <em>“View and print your collection calendar”</em> near the bottom (ignore the postcode form at the top).</span>
+        <span class="hint-link-title">Not sure? <span class="hint-link-cta">Look it up on the council site ↗</span></span>
+        <span class="hint-link-body">Scroll to <em>“View and print your collection calendar”</em>.</span>
       </a>
     </div>
 
