@@ -17,6 +17,9 @@
     --recycling: #1f1f1f; /* black  */
     --garden: #3a8a3a;    /* green  */
     --accent: #1a1a1a;
+    --hint-bg: #fff5d6;
+    --hint-fg: #5a3d00;
+    --hint-border: #f0d97a;
   }
   @media (prefers-color-scheme: dark) {
     :root {
@@ -26,6 +29,9 @@
       --card: #1c1c1c;
       --border: rgba(255,255,255,0.08);
       --accent: #f2f2f2;
+      --hint-bg: #2a2416;
+      --hint-fg: #f4d98a;
+      --hint-border: #4a3d1c;
     }
   }
   * { box-sizing: border-box; }
@@ -154,8 +160,21 @@
     font-size: 14px;
   }
   .segmented input:checked + label { background: var(--accent); color: var(--card); }
-  .modal .hint { font-size: 12px; color: var(--muted); margin-top: 6px; }
-  .modal .hint a { color: inherit; }
+  .hint-link {
+    display: block;
+    margin-top: 10px;
+    padding: 12px 14px;
+    background: var(--hint-bg);
+    color: var(--hint-fg);
+    border: 1px solid var(--hint-border);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .hint-link:hover { filter: brightness(0.97); }
+  .hint-link-title { display: block; font-weight: 700; margin-bottom: 2px; }
+  .hint-link-body em { font-style: normal; font-weight: 600; }
   .modal .actions {
     display: flex;
     gap: 8px;
@@ -207,7 +226,10 @@
         <input type="radio" name="week" value="2" id="w2" />
         <label for="w2">Week 2</label>
       </div>
-      <p class="hint">Not sure? <a href="https://www.stalbans.gov.uk/rubbish-collections" target="_blank" rel="noopener">Look up your road on the council site</a>.</p>
+      <a class="hint-link" href="https://www.stalbans.gov.uk/rubbish-collections#calendar" target="_blank" rel="noopener">
+        <span class="hint-link-title">Not sure which week? →</span>
+        <span class="hint-link-body">Open the council page and scroll to <em>“View and print your collection calendar”</em> near the bottom (ignore the postcode form at the top).</span>
+      </a>
     </div>
 
     <div class="field">
